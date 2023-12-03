@@ -49,6 +49,7 @@ int main() {
   
   int game {1};
   int result {0};
+  int power_sum {0};
 
   for (const std::string& line : lines) {
     
@@ -88,12 +89,14 @@ int main() {
                 << "; max_green: " << max_green
                 << "; max_blue: " << max_blue << '\n';
     }
+    power_sum += max_red * max_green * max_blue;
     ++game;
   }
 
   input_file.close();
 
   std::cout << "The result for Puzzle 1 is " << result << '\n';
+  std::cout << "The result for Puzzle 2 is " << power_sum << '\n';
 
   return 0;
 }
